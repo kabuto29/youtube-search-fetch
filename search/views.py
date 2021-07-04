@@ -10,7 +10,7 @@ from .modifiedpagination import CursorPaginationWithOrder, PageNumberPagination
 from rest_framework.generics import ListAPIView
 from rest_framework.filters import SearchFilter,OrderingFilter
 
-def getVideosAuto():
+def getVideosAuto(request):
     search_url = 'https://www.googleapis.com/youtube/v3/search'
 
     payload = {
@@ -38,6 +38,7 @@ def getVideosAuto():
         else:
             print(serializers.errors)
     print("added {} videos in db".format(i))
+    return render(request , 'base.html',{"number":i})
 
 class VideoBaseView(ListAPIView):
     queryset = videos.objects.all()
