@@ -1,9 +1,8 @@
 from celery.app import shared_task
 from youtubeSearch.celery import app
-from celery.utils.log import get_task_logger
 from search.serializers import VideosSerializer
 import requests
-logger = get_task_logger(__name__)
+
 
 @shared_task
 def getVideosAuto():

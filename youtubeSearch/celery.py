@@ -15,7 +15,7 @@ app = Celery('sched')
 app.conf.beat_schedule = {
     'every-15-sceonds':{
         'task': 'search.tasks.getVideosAuto',
-        'schedule' : 15
+        'schedule' : 30
     }
 }
 

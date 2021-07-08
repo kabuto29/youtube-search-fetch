@@ -5,3 +5,5 @@ ADD . /app
 COPY ./requirenments.txt /app/requirenments.txt
 RUN pip install -r requirenments.txt
 COPY . /app
+
+EXPOSE 8000
